@@ -1,11 +1,11 @@
 digraph n {
 	ranksep=0.2;
-	graph [bgcolor="#00000000", color="#eeeeee"];
-	node[color=lightgrey];
-	edge[color=lightgrey];
+	graph [bgcolor="#00000000", color="#222222"];
+	//node[color=grey];
+	//edge[color=grey];
 
 	{
-		node [shape=box3d, width=2, height=1, fontname="Cantarell", fontcolor=green];
+		node [shape=box3d, width=2, height=1, fontname="Cantarell"];
 		c0 [label="Client 0"];
 		c1 [label="Client 1"];
 		p [label="Raspberry Pi\nrunning hostapd on wlan0"];
@@ -13,6 +13,6 @@ digraph n {
 
 		c0 -> p;
 		c1 -> p;
-		p -> m [label="via RJ45", fontname="Cantarell", fontcolor=green];
+		p -> m [label="via RJ45", fontname="Cantarell"];
 	}
 }

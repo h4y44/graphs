@@ -1,14 +1,31 @@
-digraph nat {
-	size = "10,10";
+digraph n {
+	ranksep=0.2;
 	graph [bgcolor="#00000000"];
-	node [color=lightgrey, style=filled, width=2, height=4];
 	{
-		rank = same;
-		p [label="Raspberry Pi\nPackets with Raspberry Pi's IP and MAC", shape=box];
-		c [label="Client", shape=box];
-		m [label="Meganet's network", shape=box];
+		node [shape=box3d, width=2, height=1, fontname="Cantarell"];
+
+		c [label="Client"];
+		p [label="Raspberry Pi"];
+		m [label="Meganet's network"];
 	}
 
-	p -> m[color=lightgrey];
-	c -> p[color=lightgrey];
+	{
+		node [shape=box, width=1, height=1, fontname="Cantarell"];
+		cp [label="IP of Client\nMAC of Client"];
+		pp [label="IP of Raspberry Pi\nMAC of Raspberry Pi"];
+	}
+
+	{
+		node [shape=none, width=0, height=0, label=""];
+		rank = same;
+		c -> x [dir=none];
+		x -> p;
+		p -> y [dir=none];
+		y -> m;
+	}
+
+	{
+		x -> cp [dir=none];
+		y -> pp [dir=none];
+	}
 }

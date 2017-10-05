@@ -1,11 +1,9 @@
 
 digraph n {
 	ranksep=0.2;
-	graph [bgcolor="#00000000", color="#eeeeee"];
-	node[color=lightgrey];
-	edge[color=lightgrey];
+	graph [bgcolor="#00000000"];
 	{
-		node [shape=box3d, width=2, height=1, fontname="Cantarell", fontcolor=green];
+		node [shape=box3d, width=2, height=1, fontname="Cantarell"];
 
 		c [label="Client\nTTL=64"];
 		p [label="Raspberry Pi\nTTL=64"];
