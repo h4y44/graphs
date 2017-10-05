@@ -1,0 +1,18 @@
+digraph n {
+	ranksep=0.2;
+	graph [bgcolor="#00000000", color="#eeeeee"];
+	node[color=lightgrey];
+	edge[color=lightgrey];
+
+	{
+		node [shape=box3d, width=2, height=1, fontname="Cantarell", fontcolor=green];
+		c0 [label="Client 0"];
+		c1 [label="Client 1"];
+		p [label="Raspberry Pi\nrunning hostapd on wlan0"];
+		m [label="Meganet's network"];
+
+		c0 -> p;
+		c1 -> p;
+		p -> m [label="via RJ45", fontname="Cantarell", fontcolor=green];
+	}
+}

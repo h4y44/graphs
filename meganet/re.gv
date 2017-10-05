@@ -1,0 +1,43 @@
+
+digraph n {
+	ranksep=0.2;
+	graph [bgcolor="#00000000", color="#eeeeee"];
+	node[color=lightgrey];
+	edge[color=lightgrey];
+	{
+		node [shape=box3d, width=2, height=1, fontname="Cantarell", fontcolor=green];
+
+		c [label="Client\nTTL=64"];
+		p [label="Raspberry Pi\nTTL=64"];
+		n [shape=box, width=1, height=1, label="NAT\nTTL=63"];
+		m [label="Meganet's network"];
+	}
+
+	{
+		node [shape=none, width=0, height=0, label=""];
+		rank = same;
+		c;
+		p -> m;
+	}
+	
+	{
+		p -> n [dir=none];
+	}
+
+	{
+		node [shape=none, width=0, height=0, label=""];
+		c -> x [dir = none];
+	}
+
+	{
+		node [shape=none, width=0, height=0, label=""];
+		rank = same;
+		x -> n;
+		n -> y [dir=none];
+	}
+	
+	{
+		y -> m;
+	}
+
+}
