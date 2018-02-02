@@ -8,7 +8,7 @@ digraph n {
 	node [shape=box3d, width=1.0, height=1.4, fontname="Monospace"];
 	
 	subgraph cluster3{
-style=invis;
+		style=invis;
 		rank=same;
 		node [shape=none];
 		d0 [label="Depth = 0"];
