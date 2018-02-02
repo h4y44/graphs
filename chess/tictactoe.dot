@@ -1,0 +1,50 @@
+
+digraph n {
+	ranksep=0.9;
+	rank=same;
+	compound=true;
+	graph [bgcolor="#00000000", color="#222222"];
+	graph [fontname = "Monospace"];
+	node [shape=box3d, width=1.0, height=1.4, fontname="Monospace"];
+	
+	subgraph cluster3{
+style=invis;
+		rank=same;
+		node [shape=none];
+		d0 [label="Depth = 0"];
+		d1 [label="Depth = 1"];
+		d2 [label="Depth = 2"];
+		d0 -> d1 -> d2;
+	}
+
+	subgraph cluster0 {
+		penwidth = 0
+		t0 [label=" │ │ \n─┼─┼─\n │ │ \n─┼─┼─\n │ │ \n"];
+	}
+
+	subgraph cluster1 {
+		penwidth = 0
+		t1 [label="X│ │ \n─┼─┼─\n │ │ \n─┼─┼─\n │ │ \n"];
+		t2 [label=" │X│ \n─┼─┼─\n │ │ \n─┼─┼─\n │ │ \n"];
+		t3 [label=" │ │ \n─┼─┼─\n │X│ \n─┼─┼─\n │ │ \n"];
+	}
+
+	subgraph cluster2 {
+		penwidth = 0
+		t4 [label="O│X│ \n─┼─┼─\n │ │ \n─┼─┼─\n │ │ \n"];
+		t5 [label=" │X│ \n─┼─┼─\n │O│ \n─┼─┼─\n │ │ \n"];
+		t6 [label=" │X│ \n─┼─┼─\nO│ │ \n─┼─┼─\n │ │ \n"];
+		t7 [label=" │X│ \n─┼─┼─\n │ │ \n─┼─┼─\n │O│ \n"];
+		t8 [label=" │X│ \n─┼─┼─\n │ │ \n─┼─┼─\nO│ │ \n"];
+	}
+
+	t0 -> t1;
+	t0 -> t2;
+	t0 -> t3;
+
+	t2 -> t4;
+	t2 -> t5;
+	t2 -> t6;
+	t2 -> t7;
+	t2 -> t8;
+}
