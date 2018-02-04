@@ -7,7 +7,7 @@ digraph n {
 	graph [fontname = "Monospace"];
 	node [shape=box3d, width=1.0, height=1.4, fontname="Monospace"];
 	
-	subgraph cluster3{
+	subgraph cluster3 {
 		style=invis;
 		rank=same;
 		node [shape=none];
